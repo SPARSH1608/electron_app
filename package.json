@@ -1,16 +1,26 @@
 {
-  "name": "electron",
+  "name": "CbApp",
+  "productionName": "CbApp",
+  "author": "CB",
   "version": "1.0.0",
-  "description": "",
+  "description": "CbApp",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron main.js",
+    "package": "electron-builder build",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux",
+    "build": "electron-builder --win --linux"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^35.0.1"
+    "electron": "^29.4.6",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.cb.CbApp",
+    "files": [
+      "!build-assets/**"
+    ]
   }
 }
